@@ -9,7 +9,7 @@ class Tea < Sinatra::Application
   end 
 
   get '/' do
-    "The Strawerry Web Tea Round, yo!<br/><br/>The round consists of #{round_members.join(", ")}<br/><br/>It's #{settings.victim}'s turn to brew up."
+    "The Strawerry Web Tea Round!<br/><br/>Yo at STRAWBTEA to opt into the round. When #{settings.round_size} people have opted in, a round will get triggered.<br/><br/>The round consists of #{round_members.join(", ")}<br/><br/>It's #{settings.victim}'s turn to brew up."
   end
 
   get '/settings' do
@@ -34,7 +34,7 @@ class Tea < Sinatra::Application
 
         response = connection_yo.post('yo/', { 
           'api_token' => 'c12adfbd-6778-bada-5f73-43ac72c95007', 
-          'username' =>  victim# 
+          'username' =>  victim
         }) 
 
         puts "== YO RESPONSE: #{response.body}"
