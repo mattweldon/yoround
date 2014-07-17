@@ -13,7 +13,7 @@ get '/thirsty' do
 
   @round << params[:username]
   
-  puts "members of the round: " round_members.join(", ")
+  puts "members of the round: " + round_members.join(", ")
 
   connection_yo.post('yo', { 
     :api_token => 'c12adfbd-6778-bada-5f73-43ac72c95007', 
