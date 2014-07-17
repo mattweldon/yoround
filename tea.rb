@@ -21,10 +21,7 @@ class Tea < Sinatra::Application
 
     settings.round << params[:username]
 
-    puts ""    
-    puts ""
     puts "== MEMBERS OF THE ROUND: " + round_members.join(", ")
-    puts ""
 
     if round_members.count >= settings.round_size
 
@@ -42,8 +39,6 @@ class Tea < Sinatra::Application
         settings.round = []
     end
 
-    puts ""
-    puts ""
   end
 
   private
