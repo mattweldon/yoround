@@ -1,5 +1,6 @@
 require 'sinatra'
 require 'faraday'
+require 'json'
 
 class Tea < Sinatra::Application
   configure do
@@ -25,19 +26,25 @@ class Tea < Sinatra::Application
 
     if round_members.count >= settings.round_size
 
-        victim = round_members.sample
+        settings.victim = round_members.sample
 
         puts "== 4 OR MORE MEMBERS IN THE ROUND, TIME FOR #{victim} TO MAKE TEA"
 
         response = connection_yo.post('yo/', { 
           'api_token' => 'c12adfbd-6778-bada-5f73-43ac72c95007', 
-          'username' =>  victim
+          'username' =>  settings.victim
         }) 
 
         puts "== YO RESPONSE: #{response.body}"
 
-        if response.body.fetch('result') { 'FAIL' } == "OK"
-          settings.round.clear
+        puts response.status
+        if response.status == 201
+          response_body = JSON.parse(response.body)
+          puts response_body
+          if response_body.fetch('result') { 'FAIL' } == "OK"
+            puts "CLEARING ROUND"
+            settings.round.clear
+          end
         end
 
     end
