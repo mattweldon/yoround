@@ -13,7 +13,7 @@ class Tea < Sinatra::Application
   end
 
   get '/settings' do
-    settings.round_size = params[:round_size] if params[:round_size]
+    settings.round_size = Integer(params[:round_size]) if params[:round_size]
     "Round size is #{settings.round_size}"
   end
 
