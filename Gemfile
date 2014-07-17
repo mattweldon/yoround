@@ -1,4 +1,7 @@
 source 'https://rubygems.org'
+
 require 'rubygems'
-require 'sinatra'
-require 'faraday'
+
+gem "rake", "!= 0.9.0"
+gem 'sinatra'
+gem 'faraday'
