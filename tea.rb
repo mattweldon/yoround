@@ -7,6 +7,10 @@ class Tea < Sinatra::Base
     @round = []
   end 
 
+  get '/' do
+    "The Strawerry Web team Tea app, yo!"
+  end
+
   get '/thirsty' do
 
     @round << params[:username]
