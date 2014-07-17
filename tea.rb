@@ -5,10 +5,16 @@ class Tea < Sinatra::Application
   configure do
     set :round, []
     set :victim, 'no-one'
+    set :round_size, 4
   end 
 
   get '/' do
-    "The Strawerry Web team Tea app, yo!<br/><br/>The round consists of #{round_members.join(", ")}<br/><br/>It's #{settings.victim}'s turn to brew up."
+    "The Strawerry Web Tea Round, yo!<br/><br/>The round consists of #{round_members.join(", ")}<br/><br/>It's #{settings.victim}'s turn to brew up."
+  end
+
+  get '/settings' do
+    settings.round_size = params[:round_size] if params[:round_size]
+    "Round size is #{settings.round_size}"
   end
 
   get '/thirsty' do
@@ -17,7 +23,7 @@ class Tea < Sinatra::Application
 
     puts "== MEMBERS OF THE ROUND: " + round_members.join(", ")
 
-    if round_members.count >= 4
+    if round_members.count >= settings.round_size
 
       victim = round_members.sample
 
