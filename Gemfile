@@ -6,3 +6,4 @@ gem 'rack'
 gem "rake", "!= 0.9.0"
 gem 'sinatra'
 gem 'faraday'
+gem 'json'
