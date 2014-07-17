@@ -25,7 +25,7 @@ class Tea < Sinatra::Application
 
     if round_members.count >= settings.round_size
 
-      victim = round_members.sample
+        victim = round_members.sample
 
         puts "== 4 OR MORE MEMBERS IN THE ROUND, TIME FOR #{victim} TO MAKE TEA"
 
@@ -36,7 +36,10 @@ class Tea < Sinatra::Application
 
         puts "== YO RESPONSE: #{response.body}"
 
-        settings.round = []
+        if response.body.fetch('result') { 'FAIL' } == "OK"
+          settings.round.clear
+        end
+
     end
 
   end
