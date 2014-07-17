@@ -13,13 +13,13 @@ get '/thirsty' do
 
   @round << params[:username]
   
-  #if round_members.length == 1
-    connection_yo.post('yo', { 
-      :api_token => 'c12adfbd-6778-bada-5f73-43ac72c95007', 
-      :username => round_members.sample # 
-    })
-    @round = []
-  #end
+  puts "members of the round: " round_members.join(", ")
+
+  connection_yo.post('yo', { 
+    :api_token => 'c12adfbd-6778-bada-5f73-43ac72c95007', 
+    :username => round_members.sample # 
+  })
+  @round = []
 
 end
 
