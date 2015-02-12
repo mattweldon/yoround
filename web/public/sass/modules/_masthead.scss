@@ -1,0 +1,59 @@
+.masthead {
+  @include row;
+  margin-top: 2em;
+  margin-bottom: 2em;
+
+  .inner {
+    @include shift(3);
+    @include span-columns(6);
+  }
+}
+
+  .masthead__title {
+    text-align: center;
+    font-weight: 800 !important;
+    font-family: "Open Sans" !important;
+
+    b {
+      font-size: 1.5em;
+      font-family: "Open Sans" !important;
+      font-weight: 800 !important;
+      color: #9B59B6;
+      margin-left: .1em;
+      margin-right: .1em;
+    }
+
+  }
+
+  .masthead__sub-title {
+    font-size: 2em;
+    color: #ccc;
+    text-align: center;
+    font-weight: 800 !important;
+    font-family: "Open Sans" !important;
+  }
+
+  .masthead__nav {
+    @include row;
+    margin-top: 2em;
+  }
+
+    .masthead__nav__list {
+      @include shift(2);
+      @include span-columns(8);
+
+      li {
+        @include span-columns(6);
+        text-align: center;
+
+        a {
+          border: 2px solid #eee;
+          padding: .5em 1.5em;
+          border-radius: .2em;
+
+          &:hover {
+            border: 2px solid #ddd;
+          }
+        }
+      }
+    }

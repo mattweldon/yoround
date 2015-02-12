@@ -1,0 +1,46 @@
+.round-members {
+  font-size: .9em;
+  margin-top: 1em;
+}
+
+  .round-members__member {
+    @include row;
+    padding-top: .5em;
+    padding-bottom: .5em;
+    border-bottom: 2px dashed #eee;
+  }
+
+    .round-members__member__name {
+      @include span-columns(6);
+      padding: .5em 0 .5em 0;
+      font-family: "Open Sans" !important;
+      font-weight: 800 !important;
+    }
+
+    .round-members__member__statuses {
+      @include span-columns(6);
+    }
+
+      .round-members__member__status {
+        float: left;
+        padding: .5em 1.5em;
+        margin: .5em;
+        font-weight: 700;
+        border-radius: .2em;
+        float: right;
+      }
+
+      .round-members__member__status--thirsty {
+        background-color: #2980b9;
+        color: #fff;
+      }
+
+      .round-members__member__status--nominated {
+        background-color: #e74c3c;
+        color: #fff;
+      }
+
+      .round-members__member__status--brewer {
+        background-color: #2ecc71;
+        color: #fff;
+      }

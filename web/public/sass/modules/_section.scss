@@ -1,0 +1,22 @@
+.section {
+  @include row;
+  margin-bottom: 3em;
+  .inner {
+    @include shift(3);
+    @include span-columns(6);
+  }
+}
+
+  .section__title {
+    margin-bottom: .5em;
+      font-family: "Open Sans" !important;
+      font-weight: 800 !important;
+  }
+
+  .section__sub-title {
+    font-size: 1.5em;
+    margin-bottom: .5em;
+    margin-top: 1em;
+    font-family: "Open Sans" !important;
+    font-weight: 800 !important;
+  }

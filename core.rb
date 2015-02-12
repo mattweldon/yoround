@@ -1,0 +1,17 @@
+require_relative 'core/connection'
+require_relative 'core/repository'
+
+require_relative 'core/model/drinker'
+require_relative 'core/model/round'
+require_relative 'core/model/settings'
+
+require_relative 'core/services/add_drinker_demand'
+require_relative 'core/services/check_round_needed'
+require_relative 'core/services/list_demand'
+require_relative 'core/services/notify_brewer'
+require_relative 'core/services/pick_brewer'
+require_relative 'core/services/process_yo'
+require_relative 'core/services/start_round'
+require_relative 'core/services/get_round_info'
+require_relative 'core/services/list_drinkers'
+require_relative 'core/services/register_drinker'

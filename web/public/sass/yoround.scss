@@ -1,0 +1,34 @@
+@import '_base';
+
+body {
+  font-family: "Open Sans" !important;
+  padding: 0;
+  margin: 0;
+}
+
+.basic-list {
+  list-style-type: disc;
+  margin-left: 1.5em;
+  margin-top: 1em;
+  margin-bottom: 2em;
+  li {
+    margin-bottom: 1em;
+  }
+}
+
+.yo {
+  font-weight: 700;
+  color: #9B59B6;
+  text-transform: uppercase;
+}
+
+.iyr {
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+
+@import 'modules/_masthead';
+@import 'modules/_section';
+@import 'modules/_round-members'
+

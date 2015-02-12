@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>It's Yo Round</title>
+
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400,700,800' rel='stylesheet' type='text/css'>
+  
+  <link href="/css/yoround.css" media="all" rel="stylesheet" />
+  
+</head>
+<body>
+
+  <header class="masthead">
+    <div class="inner">
+      <h1 class="masthead__title">Yo at <b>ITSYOROUND</b> to join in.</h1>
+<!--       <nav class="masthead__nav">
+        <ul class="masthead__nav__list">
+          <li><a href="#the-round">The Round</a></li>
+          <li><a href="#instructions">Instructions</a></li>
+        </ul>
+      </nav> -->
+    </div>
+  </header>
+
+  <article class="section" id="the-round">
+    <div class="inner">
+
+      <h2 class="section__title">The Round</h2>
+        <% if view.someone_nominated? %>
+          <p class="section__blurb"><%= view.nominated_brewer %> was picked to make the next round <b><%= view.minutes_since_nomination %></b> minutes ago... give them a kick!</p>
+        <% else %>
+          <% if view.brew_made_today? %>
+            <p class="section__blurb">It's been <b><%= view.minutes_since_last_round %></b> minutes since <b><%= view.last_brewer %></b> made the last round.</p>
+          <% else %>
+            <p>No-one's made a drink yet today...</p>
+          <% end %>
+        <% end %>
+
+      <% if view.drinkers.count > 0 %>
+      
+      <ul class="round-members">
+        <% view.drinkers.each do |drinker| %>
+        <li class="round-members__member">
+          <h3 class="round-members__member__name"><%= drinker.name %></h3>
+          <div class="round-members__member__statuses">
+
+            <% if drinker.is_current_brewer %>
+            <p class="round-members__member__status round-members__member__status--nominated">Making the next Round</p>
+            <% end %>
+
+            <% if drinker.was_last_brewer %>
+            <p class="round-members__member__status round-members__member__status--brewer">Made the last Round</p>
+            <% end %>
+
+            <% if drinker.is_thirsty %>
+            <p class="round-members__member__status round-members__member__status--thirsty">Waiting for a Drink</p>
+            <% end %>
+
+          </p>
+        </li>
+        <% end %>
+      </ul>
+
+      <% else %>
+      <h2 class="section__title">No-one seems to want to drink today...</h2>
+      <% end %>
+    </div>
+  </article>
+
+  <article class="section" id="instructions">
+    <div class="inner">
+      <h2 class="section__title">Instructions</h2>
+
+      <h3 class="section__sub-title">How do I use it?</h3>
+
+      <ol class="basic-list">
+        <li>Send a <b class="yo">Yo</b> to <b class="iyr">ITSYOROUND</b> to join in the round.</li>
+        <li>If you get thirsty, send a <b class="yo">Yo</b> to try and speed the next round along.</li>
+        <li>If you get a <b class="yo">Yo</b> from <b class="iyr">ITSYOROUND</b>, it's <em>your</em> turn to brew up. Send a <b class="yo">Yo</b> back when you start making the drinks so you're not picked next time.</li>
+      </ol>
+
+      <h3 class="section__sub-title">When do I get my drink?</h3>
+
+      <p>If enough people (6) get thirsty, or a round hasn't been made for 1 hour, someone will be picked make the drinks.</p> 
+    </div>
+  </article>
+
+
+</body>
+</html>

@@ -1,0 +1,9 @@
+/**
+ * filename: _base.scss
+ * purpose: bootstraps the core sweetdocs styles and thirdparty libraries
+ */
+
+/* Third party libraries */
+@import 'vendor/bourbon/_bourbon';
+@import 'vendor/bitters/_bitters';
+@import 'vendor/neat/_neat';

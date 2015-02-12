@@ -1,4 +1,5 @@
 $: << File.expand_path(File.dirname(__FILE__))
-
-require './tea'
-run Tea.new
+require 'dotenv'
+Dotenv.load(File.expand_path("../.env",  __FILE__))
+require './web/app'
+run App.new

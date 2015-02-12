@@ -1,0 +1,64 @@
+.button {
+  background-color: #ccc;
+  border-radius: .3em;
+  padding: .5em .8em;
+  color: #fff;
+
+  i {
+    margin-right: .5em;
+  }
+
+  &:hover {
+    background-color: darken(#ccc, 10);
+    color: #fff;
+  }
+}
+
+  .button--primary {
+    background-color: #2574A9;
+
+    &:hover {
+      background-color: darken(#2574A9, 10);
+      color: #fff;
+    }
+  }
+
+  .button--secondary {
+    background-color: #fff;
+    border: 2px solid #eee;
+    color: #aaa;
+
+    &:hover {
+      border: 2px solid #ccc;
+      background-color: #fff;
+      color: #aaa;
+    }
+  }
+
+
+  .button--create {
+    background-color: #26A65B;
+
+    &:hover {
+      background-color: darken(#26A65B, 10);
+      color: #fff;
+    }
+  }
+
+  .button--delete {
+    background-color: #D91E18;
+
+    &:hover {
+      background-color: darken(#D91E18, 10);
+      color: #fff;
+    }
+  }
+
+  .button--amend {
+    background-color: #F39C12;
+
+    &:hover {
+      background-color: darken(#F39C12, 10);
+      color: #fff;
+    }
+  }
